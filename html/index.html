@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack Developer Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="stylesheet" href="../css/progress.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/education.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">Aneeb</span>
+                <div class="logo-dot"></div>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-house-user"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-user-circle"></i>
+                    <span>About</span>
+                </a>
+
+                <a href="#education" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Education</span>
+                </a>
+                <a href="#skills" class="nav-link">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Projects</span>
+                </a>
+
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Contact</span>
+                </a>
+               
+            </div>
+
+            <button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <div class="toggle-background"></div>
+            </button>
+
+            <button class="nav-toggle">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="title-wrapper">
+                        <span class="pre-title">👋 Hi, I'm</span>
+                        <h1 class="hero-title">Syed Aneeb</h1>
+                        <p class="hero-role">Software Developer & ML Engineer</p>
+                    </div>
+                    <p class="hero-subtitle">Transforming Ideas into Intelligent Solutions</p>
+                    <div class="hero-description">
+                        With 4+ years of professional experience in software development and machine learning, 
+                        I specialize in building innovative solutions that bridge the gap between complex algorithms 
+                        and real-world applications.
+                    </div>
+                    <div class="tech-stack">
+                        <div class="tech-icon" data-tooltip="HTML5">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-html5" style="color: #e34f26;"></i>
+                            </div>
+                            <span class="icon-name">HTML5</span>
+                        </div>
+                        <div class="tech-icon" data-tooltip="CSS3">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-css3-alt" style="color: #2965f1;"></i>
+                            </div>
+                            <span class="icon-name">CSS3</span>
+                        </div>
+                        <div class="tech-icon" data-tooltip="JavaScript">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-js" style="color: #f7df1e;"></i>
+                            </div>
+                            <span class="icon-name">JavaScript</span>
+                        </div>
+                        <div class="tech-icon" data-tooltip="React">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-react" style="color: #61dafb;"></i>
+                            </div>
+                            <span class="icon-name">React</span>
+                        </div>
+                        <div class="tech-icon" data-tooltip="Node.js">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-node" style="color: #339933;"></i>
+                            </div>
+                            <span class="icon-name">Node.js</span>
+                        </div>
+                        <div class="tech-icon" data-tooltip="Python">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-python" style="color: #3776ab;"></i>
+                            </div>
+                            <span class="icon-name">Python</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#projects" class="primary-btn">
+                            <span>View Projects</span>
+                            <i class="fas fa-rocket"></i>
+                        </a>
+                        <a href="#contact" class="secondary-btn">
+                            <span>Let's Talk</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <div class="hero-image">
+                        <div class="image-wrapper">
+                            <img src="../images/profile-pic.png" alt="Developer Profile">
+                        </div>
+                        <div class="experience-badge">
+                            <span>4+</span>
+                            <p>Years<br>Experience</p>
+                        </div>
+                    </div>
+                    <div class="image-shape"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-text">
+                    <p>A passionate full-stack developer specializing in modern JavaScript frameworks and cloud technologies, dedicated to building scalable and innovative solutions.</p>
+                </div>
+                <div class="about-counters">
+                    <div class="counter-item">
+                        <div class="counter-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="counter-value" data-target="15+">0</div>
+                        <div class="counter-label">Projects</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="counter-value" data-target="20+">0</div>
+                        <div class="counter-label">Clients</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="counter-value" data-target="4+">0</div>
+                        <div class="counter-label">Years</div>
+                    </div>
+                    <div class="counter-item">
+                        <div class="counter-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="counter-value" data-target="3+">0</div>
+                        <div class="counter-label">Awards</div>
+                    </div>
+                </div>
+                <div class="skills-cards">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Web Dev</h3>
+                        <div class="circular-progress">
+                            <div class="circle-wrap">
+                                <div class="circle">
+                                    <div class="mask full" data-percent="90">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="mask half">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="inside-circle">
+                                        <div class="percent">90%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend</h3>
+                        <div class="circular-progress">
+                            <div class="circle-wrap">
+                                <div class="circle">
+                                    <div class="mask full" data-percent="85">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="mask half">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="inside-circle">
+                                        <div class="percent">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile</h3>
+                        <div class="circular-progress">
+                            <div class="circle-wrap">
+                                <div class="circle">
+                                    <div class="mask full" data-percent="65">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="mask half">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="inside-circle">
+                                        <div class="percent">65%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>ML/AI</h3>
+                        <div class="circular-progress">
+                            <div class="circle-wrap">
+                                <div class="circle">
+                                    <div class="mask full" data-percent="60">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="mask half">
+                                        <div class="fill"></div>
+                                    </div>
+                                    <div class="inside-circle">
+                                        <div class="percent">60%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-wrapper">
+                <!-- Academic Education -->
+                <div class="education-group">
+                    <h3 class="group-title">Academic Background</h3>
+                    <div class="education-cards">
+                        <div class="education-card" data-aos="fade-up">
+                            <div class="card-header">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div class="header-content">
+                                    <h4>Bachelor of Computer Science</h4>
+                                    <p class="institution">Mirpur University of Science & Technology ,MUST</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="duration"><i class="far fa-calendar-alt"></i> 2020 - 2024</p>
+                                <p class="grade"><i class="fas fa-star"></i> CGPA: 3/4.0</p>
+                                <ul class="highlights">
+                                    <li>Key contributions in different societies of University</li>
+                                    <li>Dean's List for Academic Excellence</li>
+                                    <li>Lead Developer in Final Year Project</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-header">
+                                <i class="fas fa-school"></i>
+                                <div class="header-content">
+                                    <h4>Intermediate in Computer Science</h4>
+                                    <p class="institution">Ajk Science College Mirpur,AK</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="duration"><i class="far fa-calendar-alt"></i> 2018 - 2020</p>
+                                <p class="grade"><i class="fas fa-star"></i> Grade: A</p>
+                                <ul class="highlights">
+                                    <li>Student of the Year</li>
+                                    <li>President of Debating Society</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="education-group">
+                    <h3 class="group-title">Professional Certifications</h3>
+                    <div class="certifications-grid">
+                        <div class="certification-card" data-aos="fade-up">
+                            <div class="cert-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h4>Machine Learning Specialization</h4>
+                                <p class="issuer">FAST University Islamabad</p>
+                                <ul class="cert-details">
+                                    <li>Deep Learning & Neural Networks</li>
+                                    <li>Data Analysis with Python</li>
+                                    <li>Practical ML Projects</li>
+                                </ul>
+                                <div class="cert-footer">
+                                    <span class="date">Oct 2023</span>
+                                    <a href="javascript:void(0)" class="view-cert">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certification-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="cert-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h4>React Development</h4>
+                                <p class="issuer">KG Coding</p>
+                                <ul class="cert-details">
+                                    <li>Modern React with Hooks</li>
+                                    <li>State Management</li>
+                                    <li>React Best Practices</li>
+                                </ul>
+                                <div class="cert-footer">
+                                    <span class="date">Dec 2023</span>
+                                    <a href="javascript:void(0)" class="view-cert">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certification-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="cert-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h4>Backend Development Internship</h4>
+                                <p class="issuer">Code Alpha</p>
+                                <ul class="cert-details">
+                                    <li>API Development</li>
+                                    <li>Database Management</li>
+                                    <li>Server-side Architecture</li>
+                                </ul>
+                                <div class="cert-footer">
+                                    <span class="date">Nov 2023</span>
+                                    <a href="javascript:void(0)" class="view-cert">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certification-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="cert-icon">
+                                <i class="fab fa-flutter"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h4>Flutter Development Workshop</h4>
+                                <p class="issuer">Google Developer Student Club</p>
+                                <ul class="cert-details">
+                                    <li>Mobile App Development</li>
+                                    <li>Cross-Platform Development</li>
+                                    <li>UI/UX Implementation</li>
+                                </ul>
+                                <div class="cert-footer">
+                                    <span class="date">5 Days Workshop</span>
+                                    <a href="javascript:void(0)" class="view-cert">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certification-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="cert-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h4>Cyber Security Workshop</h4>
+                                <p class="issuer">Ignite Pakistan</p>
+                                <ul class="cert-details">
+                                    <li>Network Security</li>
+                                    <li>Ethical Hacking</li>
+                                    <li>Security Best Practices</li>
+                                </ul>
+                                <div class="cert-footer">
+                                    <span class="date">5 Days Workshop</span>
+                                    <a href="javascript:void(0)" class="view-cert">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="certification-card" data-aos="fade-up" data-aos-delay="500">
+                            <div class="cert-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h4>Web Development Internship</h4>
+                                <p class="issuer">Moboroid Software House</p>
+                                <ul class="cert-details">
+                                    <li>Django Backend Development</li>
+                                    <li>Full-Stack Development</li>
+                                    <li>3 Months Professional Experience</li>
+                                </ul>
+                                <div class="cert-footer">
+                                    <span class="date">3 Months Duration</span>
+                                    <a href="javascript:void(0)" class="view-cert">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <p>Technologies I work with</p>
+            </div>
+
+            <div class="skills-container">
+                <!-- Frontend Development -->
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item" data-tooltip="HTML5">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                        </div>
+                        <div class="skill-item" data-tooltip="CSS3">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                        </div>
+                        <div class="skill-item" data-tooltip="JavaScript">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        </div>
+                        <div class="skill-item" data-tooltip="React.js">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Development -->
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item" data-tooltip="Node.js">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                        </div>
+                        <div class="skill-item" data-tooltip="Python">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        </div>
+                        <div class="skill-item" data-tooltip="Django">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
+                        </div>
+                        <div class="skill-item" data-tooltip="PHP">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                        </div>
+                        <div class="skill-item" data-tooltip="SQL">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+                        </div>
+                        <div class="skill-item" data-tooltip="Firebase">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item" data-tooltip="Java">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                        </div>
+                        <div class="skill-item" data-tooltip="C++">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                        </div>
+                        <div class="skill-item" data-tooltip="Python">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile & Design -->
+                <div class="skill-category">
+                    <h3>Mobile & Design</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item" data-tooltip="Android Development">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android">
+                        </div>
+                        <div class="skill-item" data-tooltip="Figma">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                        </div>
+                        <div class="skill-item" data-tooltip="Adobe XD">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" alt="Adobe XD">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning -->
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item" data-tooltip="TensorFlow">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                        </div>
+                        <div class="skill-item" data-tooltip="Scikit-learn">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn">
+                        </div>
+                        <div class="skill-item" data-tooltip="Pandas">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                        </div>
+                        <div class="skill-item" data-tooltip="NumPy">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            
+            <div class="projects-wrapper">
+                <div class="project-bubble active" data-project="1">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./images/event-registration.jpg" alt="Event Registration System" onerror="this.src='https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg'">
+                            <div class="project-overlay">
+                                <a href="https://github.com/aneebnaqvi15/event-registration-system" class="github-link" target="_blank">
+                                    <i class="fas fa-code"></i>
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Event Registration System</h3>
+                            <p>A comprehensive event registration platform built with modern web technologies.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Django</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-bubble hidden" data-project="2">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./images/job-portal.jpg" alt="Job Portal" onerror="this.src='https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg'">
+                            <div class="project-overlay">
+                                <a href="https://github.com/aneebnaqvi15/jobportal" class="github-link" target="_blank">
+                                    <i class="fas fa-code"></i>
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Job Portal</h3>
+                            <p>An online job portal connecting employers with potential candidates.</p>
+                            <div class="project-tech">
+                                <span>Django</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-bubble hidden" data-project="3">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./images/restaurant.jpg" alt="Restaurant Management System" onerror="this.src='https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg'">
+                            <div class="project-overlay">
+                                <a href="https://github.com/aneebnaqvi15/Restaurent_Management_system" class="github-link" target="_blank">
+                                    <i class="fas fa-code"></i>
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Restaurant Management System</h3>
+                            <p>A complete solution for restaurant operations and order management.</p>
+                            <div class="project-tech">
+                                <span>Django</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-bubble hidden" data-project="4">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./images/food-app.jpg" alt="Food App" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg'">
+                            <div class="project-overlay">
+                                <a href="https://github.com/aneebnaqvi15/Food-App" class="github-link" target="_blank">
+                                    <i class="fas fa-code"></i>
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Food App</h3>
+                            <p>A web app for food meal planer and recipe planner.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-bubble hidden" data-project="5">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./images/news-app.jpg" alt="NewsCaster App" onerror="this.src='https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg'">
+                            <div class="project-overlay">
+                                <a href="https://github.com/aneebnaqvi15/NewsCaster" class="github-link" target="_blank">
+                                    <i class="fas fa-code"></i>
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>NewsCaster Android App</h3>
+                            <p>A news aggregation app that delivers personalized news content.</p>
+                            <div class="project-tech">
+                                <span>Android</span>
+                                <span>Java</span>
+                                <span>XML</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-bubble hidden" data-project="6">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="./images/portfolio.jpg" alt="Portfolio Website" onerror="this.src='https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg'">
+                            <div class="project-overlay">
+                                <a href="https://github.com/aneebnaqvi15/portfolio-website" class="github-link" target="_blank">
+                                    <i class="fas fa-code"></i>
+                                    View Code
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>A modern and responsive portfolio website showcasing my work.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>GSAP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-nav">
+                <button class="nav-btn prev-btn" aria-label="Previous project">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" aria-label="Next project">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to drop a message!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="item-content">
+                                <h4>Email</h4>
+                                <a href="mailto:your.email@example.com">syedaneebajk00786@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="item-content">
+                                <h4>Location</h4>
+                                <p>Islamabad, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="item-content">
+                                <h4>Phone</h4>
+                                <a href="tel:+1234567890">+92 (355) 6606136</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/syedaneeb15/" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/aneebnaqvi15" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm" onsubmit="return handleSubmit(event)">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 syedaneeb75@. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="toast-container"></div>
+
+    <!-- Contact Form JavaScript -->
+    <script>
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Add your EmailJS public key here
+        })();
+
+        const contactForm = document.querySelector('.contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = this.querySelector('input[name="name"]').value;
+            const email = this.querySelector('input[name="email"]').value;
+            const message = this.querySelector('textarea[name="message"]').value;
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            // Send email using EmailJS
+            emailjs.send('service_id', 'template_id', { // Add your service and template IDs
+                from_name: name,
+                from_email: email,
+                message: message,
+                to_email: 'syedaneebajk00786@gmail.com'
+            })
+            .then(function() {
+                showToast('Message sent successfully! I will get back to you soon.', 'success');
+                contactForm.reset();
+            })
+            .catch(function(error) {
+                showToast('Failed to send message. Please try again later.', 'warning');
+                console.error('EmailJS Error:', error);
+            })
+            .finally(function() {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+
+    <!-- Custom JS -->
+    <script>
+        // Toast Notification Function
+        function showToast(message, type = 'info') {
+            const toastContainer = document.querySelector('.toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            
+            let icon;
+            switch(type) {
+                case 'info':
+                    icon = 'info-circle';
+                    break;
+                case 'warning':
+                    icon = 'exclamation-circle';
+                    break;
+                case 'success':
+                    icon = 'check-circle';
+                    break;
+                default:
+                    icon = 'info-circle';
+            }
+
+            toast.innerHTML = `
+                <i class="fas fa-${icon}"></i>
+                <span class="message">${message}</span>
+                <span class="close-btn">
+                    <i class="fas fa-times"></i>
+                </span>
+            `;
+
+            toastContainer.appendChild(toast);
+            
+            // Show toast with animation
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 10);
+
+            // Add click event to close button
+            const closeBtn = toast.querySelector('.close-btn');
+            closeBtn.addEventListener('click', () => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            });
+
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        toast.remove();
+                    }, 300);
+                }
+            }, 5000);
+        }
+
+        // Add click event listeners to certification view buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            const certButtons = document.querySelectorAll('.view-cert');
+            
+            certButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showToast('Certifications will be available soon. Please check back later!', 'warning');
+                });
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/counter.js"></script>
+    <script src="../js/projects.js"></script>
+    <script src="../js/progress.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>
