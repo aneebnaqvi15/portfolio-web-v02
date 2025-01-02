@@ -24,10 +24,17 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <span class="logo-text">Aneeb</span>
-                <div class="logo-dot"></div>
+                <div class="logo-wrapper">
+                    <span class="logo-text">Portfolio</span>
+                    <span class="logo-separator">|</span>
+                    <span class="logo-name">Aneeb</span>
+                    <div class="logo-dot"></div>
+                </div>
+                <span class="premium-logo-badge">
+                    <i class="fas fa-code"></i>
+                </span>
             </a>
-            
+
             <div class="nav-menu">
                 <a href="#home" class="nav-link active">
                     <i class="fas fa-house-user"></i>
@@ -37,7 +44,6 @@
                     <i class="fas fa-user-circle"></i>
                     <span>About</span>
                 </a>
-
                 <a href="#education" class="nav-link">
                     <i class="fas fa-graduation-cap"></i>
                     <span>Education</span>
@@ -50,21 +56,15 @@
                     <i class="fas fa-code-branch"></i>
                     <span>Projects</span>
                 </a>
-
                 <a href="#contact" class="nav-link">
                     <i class="fas fa-paper-plane"></i>
                     <span>Contact</span>
                 </a>
-               
             </div>
 
-            <button class="theme-toggle">
-                <i class="fas fa-moon"></i>
-                <div class="toggle-background"></div>
-            </button>
-
             <button class="nav-toggle">
-                <span class="hamburger"></span>
+                <span class="premium-badge">PRO</span>
+                <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
@@ -389,18 +389,26 @@
 
                         <div class="certification-card" data-aos="fade-up" data-aos-delay="300">
                             <div class="cert-icon">
-                                <i class="fab fa-flutter"></i>
+                                <svg class="flutter-icon" viewBox="0 0 256 317" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                    <defs>
+                                        <linearGradient x1="3.952%" y1="26.993%" x2="75.897%" y2="52.919%" id="flutter-grad">
+                                            <stop offset="0%" style="stop-color:#54C5F8"/>
+                                            <stop offset="100%" style="stop-color:#0468D7"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M157.666 0L0 157.667l48.8 48.8L255.268.001 157.666 0zM156.567 145.397L72.15 229.815l48.984 49.716 48.71-48.71 85.425-85.424-48.702-48.702z" fill="url(#flutter-grad)"/>
+                                </svg>
                             </div>
                             <div class="cert-content">
-                                <h4>Flutter Development Workshop</h4>
-                                <p class="issuer">Google Developer Student Club</p>
+                                <h4>Flutter App Development</h4>
+                                <p class="issuer">Udemy</p>
                                 <ul class="cert-details">
-                                    <li>Mobile App Development</li>
-                                    <li>Cross-Platform Development</li>
-                                    <li>UI/UX Implementation</li>
+                                    <li>Cross-platform Development</li>
+                                    <li>State Management with Provider</li>
+                                    <li>UI/UX Best Practices</li>
                                 </ul>
                                 <div class="cert-footer">
-                                    <span class="date">5 Days Workshop</span>
+                                    <span class="date">Jan 2024</span>
                                     <a href="javascript:void(0)" class="view-cert">View Certificate <i class="fas fa-external-link-alt"></i></a>
                                 </div>
                             </div>

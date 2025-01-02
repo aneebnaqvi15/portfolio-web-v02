@@ -28,32 +28,6 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// Skills Data
-const skillsData = {
-    'Front-End': [
-        { name: 'HTML5', level: 90 },
-        { name: 'CSS3', level: 85 },
-        { name: 'JavaScript', level: 88 },
-        { name: 'React', level: 82 },
-        { name: 'Vue.js', level: 75 }
-    ],
-    'Back-End': [
-        { name: 'Node.js', level: 80 },
-        { name: 'Python', level: 85 },
-        { name: 'Django', level: 78 },
-        { name: 'SQL', level: 82 }
-    ],
-    'Mobile Development': [
-        { name: 'Kotlin', level: 75 },
-        { name: 'Android Studio', level: 70 },
-        { name: 'React Native', level: 72 }
-    ],
-    'Machine-Level': [
-        { name: 'C', level: 85 },
-        { name: 'Assembly', level: 70 },
-        { name: 'Computer Architecture', level: 75 }
-    ]
-};
 
 // Populate Skills
 Object.entries(skillsData).forEach(([category, skills]) => {
@@ -76,89 +50,7 @@ Object.entries(skillsData).forEach(([category, skills]) => {
     });
 });
 
-// Project Data
-const projects = [
-    {
-        title: 'AI-Powered Task Manager',
-        description: 'Smart task management system with AI prioritization and natural language processing',
-        technologies: ['React', 'Python', 'TensorFlow', 'Node.js'],
-        image: 'https://source.unsplash.com/random/800x600/?tech',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'Crypto Trading Bot',
-        description: 'Automated cryptocurrency trading bot with real-time market analysis',
-        technologies: ['Python', 'Machine Learning', 'Binance API'],
-        image: 'https://source.unsplash.com/random/800x600/?cryptocurrency',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'AR Interior Designer',
-        description: 'Augmented reality app for visualizing furniture in real space',
-        technologies: ['Unity', 'ARKit', 'C#', 'iOS'],
-        image: 'https://source.unsplash.com/random/800x600/?interior',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'Smart Home Hub',
-        description: 'IoT platform for controlling and automating home devices',
-        technologies: ['React Native', 'Node.js', 'MongoDB', 'IoT'],
-        image: 'https://source.unsplash.com/random/800x600/?smarthome',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'Social Media Analytics',
-        description: 'Real-time social media sentiment analysis and trend prediction',
-        technologies: ['Python', 'NLP', 'React', 'D3.js'],
-        image: 'https://source.unsplash.com/random/800x600/?social',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'Health Tracking Platform',
-        description: 'AI-powered health monitoring and prediction system',
-        technologies: ['Flutter', 'Firebase', 'TensorFlow'],
-        image: 'https://source.unsplash.com/random/800x600/?health',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'Game Development Engine',
-        description: 'Custom 2D game engine with physics simulation',
-        technologies: ['C++', 'OpenGL', 'Python'],
-        image: 'https://source.unsplash.com/random/800x600/?game',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'Cloud DevOps Dashboard',
-        description: 'Unified dashboard for monitoring cloud infrastructure',
-        technologies: ['Vue.js', 'AWS', 'Docker', 'Kubernetes'],
-        image: 'https://source.unsplash.com/random/800x600/?cloud',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'Blockchain Voting System',
-        description: 'Secure and transparent voting system using blockchain',
-        technologies: ['Solidity', 'Ethereum', 'Web3.js'],
-        image: 'https://source.unsplash.com/random/800x600/?blockchain',
-        demo: '#',
-        github: '#'
-    },
-    {
-        title: 'AI Music Composer',
-        description: 'Neural network-based music generation system',
-        technologies: ['Python', 'TensorFlow', 'Web Audio API'],
-        image: 'https://source.unsplash.com/random/800x600/?music',
-        demo: '#',
-        github: '#'
-    }
-];
+
 
 // Populate Projects
 const projectsGrid = document.querySelector('.projects-grid');
@@ -207,26 +99,22 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     function showProject(index) {
-        // Hide all projects first
-        projectBubbles.forEach((bubble, idx) => {
-            if (idx === index) {
-                bubble.style.display = 'block';
+        projectBubbles.forEach((bubble, i) => {
+            if (i === index) {
                 bubble.classList.remove('hidden');
                 bubble.classList.add('active');
+                // Add entrance animation
+                gsap.fromTo(bubble, 
+                    { opacity: 0, scale: 0.8 }, 
+                    { opacity: 1, scale: 1, duration: 0.5, ease: "back.out" }
+                );
             } else {
-                bubble.style.display = 'none';
-                bubble.classList.remove('active');
                 bubble.classList.add('hidden');
+                bubble.classList.remove('active');
             }
         });
-
-        // Update navigation buttons
-        prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === projectBubbles.length - 1;
+        updateButtonStates();
     }
-
-    // Show first project on load
-    showProject(0);
 
     // Next button click handler
     nextBtn.addEventListener('click', () => {
@@ -244,37 +132,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' && currentIndex < projectBubbles.length - 1) {
-            currentIndex++;
-            showProject(currentIndex);
-        } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
-            currentIndex--;
-            showProject(currentIndex);
-        }
-    });
-
-    // Initialize buttons state
-    updateButtonStates();
-
     function updateButtonStates() {
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex === projectBubbles.length - 1;
         
-        // Add visual feedback for disabled state
-        if (prevBtn.disabled) {
-            prevBtn.classList.add('disabled');
-        } else {
-            prevBtn.classList.remove('disabled');
-        }
-        
-        if (nextBtn.disabled) {
-            nextBtn.classList.add('disabled');
-        } else {
-            nextBtn.classList.remove('disabled');
-        }
+        // Update button opacity based on state
+        prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+        nextBtn.style.opacity = currentIndex === projectBubbles.length - 1 ? "0.5" : "1";
     }
+
+    // Initialize first project
+    showProject(0);
+
+    // Make sure links are clickable
+    const githubLinks = document.querySelectorAll('.github-link');
+    githubLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent the click from affecting the slider
+            window.open(link.href, '_blank'); // Open link in new tab
+        });
+    });
 });
 
 // Enhanced GSAP Animations
@@ -399,17 +276,79 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 // Mobile Navigation Toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-const hamburger = document.querySelector('.hamburger');
+window.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const toggleIcon = document.querySelector('.nav-toggle i');
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
+    if (!navToggle || !navMenu || !toggleIcon) return;
+
+    function toggleMenu(e) {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+        
+        if (toggleIcon.classList.contains('fa-bars')) {
+            toggleIcon.classList.remove('fa-bars');
+            toggleIcon.classList.add('fa-times');
+        } else {
+            toggleIcon.classList.remove('fa-times');
+            toggleIcon.classList.add('fa-bars');
+        }
+    }
+
+    navToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+            toggleIcon.classList.remove('fa-times');
+            toggleIcon.classList.add('fa-bars');
+        }
+    });
+
+    // Close menu when clicking nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            toggleIcon.classList.remove('fa-times');
+            toggleIcon.classList.add('fa-bars');
+        });
+    });
+});
+
+// Close mobile menu when clicking a link
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const navMenu = document.querySelector('.nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    const navMenu = document.querySelector('.nav-menu');
+    const navToggle = document.querySelector('.nav-toggle');
+    if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        const hamburger = document.querySelector('.hamburger');
+        hamburger.classList.remove('active');
+    }
 });
 
 // Active Navigation Link
-const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        link.classList.add('active');
+    });
+});
 
 function scrollActive() {
     const scrollY = window.pageYOffset;
@@ -428,22 +367,6 @@ function scrollActive() {
 }
 
 window.addEventListener('scroll', scrollActive);
-
-// Theme Toggle
-const themeToggle = document.querySelector('.theme-toggle');
-const body = document.body;
-
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    const icon = themeToggle.querySelector('i');
-    if(body.classList.contains('light-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    }
-});
 
 // Toast Notification Function
 function showToast(message, type = 'info') {
